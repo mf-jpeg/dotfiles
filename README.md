@@ -1,4 +1,4 @@
-## dotfiles - Unix config files
+## dotfiles - My unix config files (tested on WSL running Arch)
 
 * zsh
 * git
