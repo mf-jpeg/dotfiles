@@ -3,6 +3,9 @@ local keymap = vim.keymap
 -- Leader key
 vim.g.mapleader = " "
 
+-- General
+keymap.set("n", "<leader>w", ":wa<CR>", { desc = "Save all buffers" })
+
 -- Navigation
 keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up" })
 keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down" })
