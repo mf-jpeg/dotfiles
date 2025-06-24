@@ -20,9 +20,11 @@ opt.mouse = ""
 -- termguicolors: Enable all colors.
 -- colorscheme: Set colorscheme.
 -- SignColumn: Remove sign column color.
+-- StatusLine: Change color of active split's status line.
 opt.termguicolors = true
 vim.cmd("colorscheme vim")
 vim.cmd([[highlight SignColumn ctermbg=NONE guibg=NONE]])
+vim.api.nvim_set_hl(0, "StatusLine", { bg = "#FF55FF", fg = "#000000" })
 
 -- Number line
 --
@@ -63,11 +65,11 @@ opt.splitbelow = true
 -- FocusGained: Sync clipboard on focus gain.
 -- FocusLost: Sync clipboard on focus lost.
 vim.api.nvim_create_autocmd({ "FocusGained" }, {
-    pattern = { "*" },
-    command = [[call setreg("@", getreg("+"))]],
+	pattern = { "*" },
+	command = [[call setreg("@", getreg("+"))]],
 })
 
 vim.api.nvim_create_autocmd({ "FocusLost" }, {
-    pattern = { "*" },
-    command = [[call setreg("+", getreg("@"))]],
+	pattern = { "*" },
+	command = [[call setreg("+", getreg("@"))]],
 })
